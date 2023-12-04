@@ -1,0 +1,54 @@
+Hoy no es tan critico manejar memoria, antaño SI pues habia poca memoria
+ - En celulares si puede ser necesario el manejo de memoria para no quedarnos sin espacio??
+ - Es molesto y poco eficiente estar formateando el telefono??
+	UN SERVIDOR NO LO PODEMOS REINCIAR PARA LIBERAR MEMORIA -> Computadora disponible 24/7
+
+Siempre tenemos memoria (y recursos limitados) -> Optimizarlos, si no se usa hay que liberarlo
+
+Hay un listado de procesos solicitando memoria -> Debemos gestionarla
+
+OBJETIVOS DE LA GESTION DE MEMORIA
+1. Ofrecer a cada proceso un espacio logico propio
+  Logico: Concepto -> 4Gb en uso (posible rotando la memoria)
+  Fisico: El recurso disponible fisicamente -> 2Gb de Ram
+
+  La parte logica normalmente es mas grande que la fisica? 
+  Cada espacio logico debe tener algo fisico para trabajar
+
+2. Proporcionar proteccion entre los procesos
+  No podemos quitarle un recurso a un proceso que lo está usando
+3. Permitir que los procesos compartan memoria
+  Maximizar los recursos 
+
+REQUISITOS DE LA GESTION DE MEMORIA: Todos deben cumplirse
+ - Reubicacion: Poder reemplazar un proceso por otro usando el mismo recurso. Hay sistemas operativos y hardware que son monoproceso, //no permiten su gestion?
+
+ - Proteccion: Mientras alguien usa un recurso NO SE LO PODEMOS RETIRAR a menos que aseguremos que no se perderá su proceso (se pausa el proceso -> Con numero de proceso y numero de usuario)
+
+- Organizacion Logica: 
+- Organizacion fisica
+
+TECNICAS DE ADMINISTRACION DE MEMORIA
+1. ASIGNACION CONTIGUA: Podemos partirla en particiones de tamaños iguales o en particiones de distinto tamaño
+ Se puede presentar fragmentacion 
+ |8Mb||8Mb||8Mb| -> Mismo tamaño
+ |8Mb||4Mb||6Mb| -> Distinto tamaño 
+
+Las particiones estaticas tienen dos dificultades: 
+- Puede ser que un proceso sea demasiado grande y que no se pueda ejecutar (Si tenemos un parqueo solo de motos, un carro no cabe)
+- Puede malgastar espacio interno (Si metemos una moto en el espacio de un carro) -> Produce fragmentación interna
+
+Particiones dinamicas (8:00 AM)
+Esperamos a que un proceso termine o pausarlo para liberar un recurso
+
+Si no reestructuramos la memoria de manera que quedan pequeños fragmentos libres NO PODEMOS USARLA para procesos que requieren más espacio contiguo. 
+Desfragmentacion: Proceso que reestructura la memoria para unir los espacios libres, haciendo un espacio libre contiguo
+
+Antes los discos duros rigidos necesitaban un proceso de defragmentacion (defraggler) para dejar el espacio libre al final. Lo mismo se quiere con la memoria RAM 
+
+ALGORITMOS - organizacion de memoria
+- Mejor ajuste: Ubicar el proceso en el espacio que más se ajuste a su tamaño. (Menos espacio desperdciado)
+- Primer ajuste: Colocarlo en la primera posicion en donde quepa
+- Peor ajuste: Donde más se "desperdicie" la memoria 
+
+Macro de la pagina: Relacion de la memoria fisica
