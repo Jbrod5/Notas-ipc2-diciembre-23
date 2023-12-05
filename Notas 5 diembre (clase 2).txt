@@ -1,0 +1,69 @@
+Hay dos tipos de memoria reservada para la ejecucion de un programa, estatica y dinamica.
+- Estatica: El compilador la reserva y tiene ese espacio reservado hasta el final de la ejecucion.
+
+Memoria estática no puede aumentarse ni disminuirse. Si reservamos 1000 espacios en memoria (en realidad dependiendo del tipo de dato reserva una cantidad de bits en ram) no podemos expandirla ni liberar espacio. 
+
+Permite prescindir de punteros 
+
+Se reserva desde el inicio
+
+- Dinamica: Usa parte de la memoria principal llamada heap. No reserva todo el espacio en memoria. Se reserva conforme va la ejecicion. El heap empieza en cero e incrementa conforme la ejecucion. Requiere de punteros.
+
+Para evitar el inconveniente tenemos la asig de memoria dinamica. Conforme se necesita se solicita más memoria removiendo el limite de la memoria estática.
+
+
+Una estructura es un conjunto de registros. Es un tipo de dato compuesto (como un objeto) (C++)
+
+
+VARIABLES PUNTEROS -------------------------------------------
+Un puntero es una variable que sirve para señalar la DIRECCION DE MEMORIA en que se encuentra otro dato almacenado como valor 
+
+Puede apuntar a un objeto de cualquier tipo, variables simples, arreglos, estructuras, funciones, etc.
+
+Su contenido es una direccion de memoria y no un valor cualquiera.
+
+Las variables tienen: 
+- identificador (nombre)
+- tipo de dato -> dependiendo de este reserva una cantidad de memoria (y su direccion)
+	EL SISTEMA OPERATIVO ASIGNA LA DIRECCION DE MEMORIA
+	Se almacena la direccion en donde inicia el espacio designado para una variable (DIRECCION BASE, direccion de la primera celda utilizada por el espacio)
+- contenido
+
+Los punteros tienen: 
+- nombre
+- contenido 
+- direccion de memoria (direccion base del)
+# Su tipo de dato debe tener el mismo tipo de dato que el dato donde apuntan para tener acceso a la misma cantidad de semgmentos de memoria del dato original
+# Inicialmente contienen direcciones invalidas (no apuntan a nada (NULL), no se inicializan automáticamente)
+
+int i;		-> Variable de tipo entero
+int *punt;	-> Puntero de tipo entero 
+
+
+Crear y liberar memoria dinamica
+ El programador decide en que momento crear o liberar espacio en base a los algoritmos usados
+ Cada lenuaje tiene operaciones para crear o liberar espacio 
+	create ap???
+	delete ap
+
+
+Gestion de memoria dinamica - Reglas para programar con apuntadores y memoria dinamica
+# Algunos lenguajes tienen colectores de basura que liberan memoria cuando no tienen un apuntador referenciandolos
+
+- SIEMPRE ejecutar un delete antes de terminar la ejecucion de un programa
+- Liberar actua liberando el espacio de memoria apuntado
+- Un apuntador local a un modulo se destruye al terminar su ejecución 
+- Los valores basura y nulo son diferentes
+- Liberar un apuntador que no hace referencia a un espacio de memoria dinámica provoca fallas de ejecución 
+- ... (Ver presentacion)
+
+
+
+Operadores con punteros 
+& -> Retorna la direccion en memoria
+int i
+cout << &i; 
+punt = &i; -> Forma de asignar una direccion a un puntero 
+
+* -> Retorna el valor de lo que apunta (si no se usa retorna la direccion a la que apuntamos)
+
