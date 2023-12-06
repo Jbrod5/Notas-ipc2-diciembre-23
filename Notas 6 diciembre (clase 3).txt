@@ -1,0 +1,59 @@
+TDA: Tipo de Dato Abstracto 
+Se usan cuando queremos guardar datos que sean dinamicos
+(Los simples son enteros, bool, etc
+ Los compuestos pueden ser una cadena de caracteres, arrays, etc)
+
+Un array es un vector 
+
+LISTAS
+Una lista es una colección de 0 o más elementos 
+(si tiene 0 elementos se dice que está vacía)
+En una lista todos los elementos son de un mismo tipo
+Son estructuras lineales, o sea
+ - Sus elementos se colocan uno detrás de otro (como un tren con bagones)
+ - Cada elemento de una lista se denomina nodo
+* Son más flexibles que los arrays
+* Permiten trabajo "dinámico" con un grupo de elementos
+
+TIPOS DE LISTAS
+
+Según su comportamiento se clasifican en: 
+ - Listas
+ - Pilas 
+ - Colas
+
+De acuerdo a su implementación se clasifican en: 
+ - Simples
+ - Doblemente enlazadas
+ - Circulares
+
+
+Listas simples: 
+ Conjunto de nodos uno detrás de otro, se puede conocer al nodo inicial y final
+De cada nodo de la lista se conoce su contenido que es la info que almacena dentro (puede ser cualquier tipo de dato) y un sucesor único (excepto el último nodo de la lista)
+
+TDA NODO
+Una lista puede ser de cualquier tipo, todos los nodos tienen el mismo tipo
+* Una lista está compuesta de nodos, es importante definir el TDA Nodo 
+... ver presentación :c
+
+Hay dos posibilidades de implementación: 
+ * Estática (con arrays)
+	- Numero de elementos finito
+	- Al crearla se indica el tamaño máximo del arreglo
+	(No es tan común usar arrays, no es tan logico)
+	- Al insertar o remover un elementos los elementos restantes avanzarán o retrocederán (se corren hacia delante o atrás)
+	- NO ES LA IMPLEMENTACION IDEAL PARA LAS LISTAS SIMPLES
+	- Los "nodos" son adyacentes en memoria (porque es un array)
+	/* Una lista contigua realmente es un array */
+	 
+* Dinámica 
+1. LIstas simples enlazadas
+ 	- Implementación flexible y potente
+	- Los nodos ya no son adyacentes en memoria
+		* Un nodo A se enlaza (puntero) con otro B
+		* Almacenado dentro de la dirección de memoria del nodo
+	-Al insertar o eliminar un nodo ya no ay que "mover" al resto de elementos, solo enlazarlo con la lista 
+
+
+
